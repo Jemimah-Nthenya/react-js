@@ -1,7 +1,7 @@
 export const login = async ({username, password}) => {
     const baseUrl = process.env.REACT_APP_BASE_URL;
     try {
-    const Response = await fetch(`${baseUrl}/auth/login`,{
+    const response = await fetch(`${baseUrl}/auth/login`,{
         method: "POST",
         headers:{
             'Content-Type':"application/json",
@@ -10,7 +10,8 @@ export const login = async ({username, password}) => {
     });
 
     return response.json();
-  }  catch (error) {
+    }  
+    catch (error) {
     return `Failed to login ${error.message}`;
   }
 };

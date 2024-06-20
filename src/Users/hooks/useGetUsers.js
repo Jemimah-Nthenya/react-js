@@ -1,7 +1,7 @@
 import { getUsers } from "../utils";
 import { useState, useEffect } from "react";
 
-const useGetUsers = ()=> {
+export const useGetUsers = ()=> {
     const [users, setUsers] = useState([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
@@ -9,6 +9,7 @@ const useGetUsers = ()=> {
     useEffect(()=>{
         const fetchUsers = async()=>{
             try{
+            setLoading(true)
             const users = await getUsers();
             console.log({users});
             setUsers(users.users)
@@ -26,4 +27,4 @@ const useGetUsers = ()=> {
         loading,
         error,
     }
-}
+};

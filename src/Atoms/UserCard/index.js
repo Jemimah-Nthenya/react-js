@@ -1,3 +1,5 @@
+import'./index.css';
+
 const UserCard = ({image, fullName, id})=> {
     return(
         <div>
